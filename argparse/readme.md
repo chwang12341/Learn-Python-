@@ -24,7 +24,7 @@ ArgumentParser()  parameter:
 
 + epilog: additional materials
 
-![argparse1](C:\Users\user\Desktop\Learn-Python-\argparse\images\argparse1.PNG)
+![argparse1](https://github.com/chwang12341/Learn-Python-/blob/master/argparse/images/argparse1.PNG?raw=true)
 
 
 
@@ -47,7 +47,7 @@ ArgumentParser()  parameter:
 
      ​      form variable name: args.position
 
-![argparse2](C:\Users\user\Desktop\Learn-Python-\argparse\images\argparse2.PNG)
+![argparse2](https://github.com/chwang12341/Learn-Python-/blob/master/argparse/images/argparse2.PNG?raw=true)
 
 ### Execute python
 
@@ -58,7 +58,7 @@ go to cmd and try to run your python like this
 3. python learning_argparse.py 10 Shane --food meat        : Additional Parameter
 4. python learning_argparse.py 10 Shane --place forest --food toast : Additional Parameter
 
-![argparse3](C:\Users\user\Desktop\Learn-Python-\argparse\images\argparse3.PNG)
+![argparse3](https://github.com/chwang12341/Learn-Python-/blob/master/argparse/images/argparse3.PNG?raw=true)
 
 
 
