@@ -25,8 +25,11 @@
 ### findall()
 
 + parsing the web page easily
++ you can easily put the data you want into list
 
 ![images](https://github.com/chwang12341/Learn-Python-/blob/master/parse/images/findall().PNG?raw=true)
+
+
 
 
 
