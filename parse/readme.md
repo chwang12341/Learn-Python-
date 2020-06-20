@@ -10,9 +10,7 @@
 + load into a dictionary type ,  then you can easily find the data you want
 + Warning : the length of the text must be same as the parse you are writing, otherwise it won't parse any thing down
 
-![images](images/parse().png)
-
-
+![parse()](images\parse().PNG)
 
 ### search()
 
@@ -20,7 +18,7 @@
 + use the pattern to find out the data we want
 + I will show some scenario  of using  it in my tool repo
 
-![images](images/search().png)
+![images](images\search().png)
 
 
 
@@ -28,7 +26,7 @@
 
 + parsing the web page easily
 
-![images](images/findall().png)
+![images](images\findall().png)
 
 
 
@@ -36,6 +34,6 @@
 
 + If you have a lot of same thing to parse
 
-  ![images](images/compile().png)
+  ![images](images\compile().png)
 
 *reference: <https://pypi.org/project/parse/>*
