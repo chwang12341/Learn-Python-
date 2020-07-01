@@ -70,4 +70,3 @@ if __name__ == "__main__":
     
     ## static parameters
     count(args.runtimes, args.name)
-    
