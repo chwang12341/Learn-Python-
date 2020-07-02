@@ -148,34 +148,4 @@
 
 
 
-## __getattr__ 、 __setattr__ 用法
-class example:
-    
-    def __init__(self,ax, bx):
-        self.a = ax
-        self.b = bx
-    ## 轉成dict 
-    def d(self):
-        print(self.__dict__)
-        
-    def __getattr__(self,name):
-        print("__getattr__")
-    
-    def __setattr__(self,name,value):
-        print("__setattr__")
-        self.__dict__[name] = value
-
-## execute
-E = example(2,8)
-E.d()
-print(E.x)
-E.x = 6
-E.d()
-# Output
-# __setattr__
-# __setattr__
-# {'a': 2, 'b': 8}
-# __getattr__
-# None
-# __setattr__
-# {'a': 2, 'b': 8, 'x': 6}
+\
