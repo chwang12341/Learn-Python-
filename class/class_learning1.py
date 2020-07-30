@@ -108,3 +108,20 @@ print(little_turtle_home.address , little_turtle_home.name, little_turtle_home.p
 print(new_little_turtle_home.material) # brick
 ## 查看原本建立的class little_turtle_home 底下的class material
 print(little_turtle_home.material) # <class '__main__.House.material'>
+
+
+class House(object):
+ pass
+Little_turtle_home = House()
+Little_turtle_home.name = 'Turtle' ## 賦予新值
+print(Little_turtle_home.name) #Turtle
+
+class House1(object):
+ __slots__ = {'people_amount','phone'}
+ pass
+Little_turtle_home1 = House1()
+# Little_turtle_home1.name = 'Turtle' # 'House1' object has no attribute 'name'
+Little_turtle_home1.people_amount = 1
+print(Little_turtle_home1.people_amount) #1
+Little_turtle_home1.phone = '09xx'
+print(Little_turtle_home1.phone) #09xx
