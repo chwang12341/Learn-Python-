@@ -1,4 +1,4 @@
-# 給自己的Python小筆記 - 數據處理必備技能 - 將外部數據集Excel檔轉成可操作的DataFrame - read_csv() 參數詳細介紹與教學 
+# 給自己的Python小筆記 - 數據處理必備技能 - 將外部數據集Excel檔轉成可操作的DataFrame - read_excel() 參數詳細介紹與教學 
 
 
 
