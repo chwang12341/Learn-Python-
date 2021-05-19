@@ -1,0 +1,3 @@
+[console_scripts]
+rst2pdf = rst2pdf.createpdf:main
+

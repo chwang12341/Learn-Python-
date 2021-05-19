@@ -1,0 +1,135 @@
+#!c:\users\user\desktop\learn-python-\sphinx\sphinx_more\sphinx_example\scripts\python.exe
+# Copyright (c) 2017 Leo Hemsted
+# Licensed under the BSD License, for detailed license information, see COPYING
+
+"""
+============
+Command-line
+============
+
+smartypants
+===========
+
+``smartypants`` provides a command-line interface for :py:mod:`smartypants`
+module, which is named as same as the module.
+
+It takes input from either standard input or files and output the result to
+standard output.
+
+
+Usage
+=====
+
+Syntax::
+
+  smartypants [-h] [-v] [-a ATTR] [-s SKIP] [FILE [FILE ...]]
+
+Some examples::
+
+  $ smartypants inputfile
+
+  $ command-foo inputfile | command-bar | smartypants
+
+
+Options
+=======
+
+``-a``, ``--attr``:
+  processe attrbutes tells smartypants how to translate,
+
+  The attributes is a string of characters, which are taken from the names of
+  attributes of :py:class:`smartypants.Attr <smartypants._Attr>`.
+
+  For example, the default attribute is
+  :py:attr:`smartypants.Attr.set1 <smartypants._Attr.set1>`::
+
+    smartypants -a 1
+
+  If you want :py:attr:`smartypants.Attr.q <smartypants._Attr.q>` and
+  :py:attr:`smartypants.Attr.w <smartypants._Attr.w>` then it would be invoked
+  as::
+
+    smartypants -a qw
+
+``-s``, ``--skip``:
+  skip specified HTML elements.
+
+  It is a comma-separated string. For example::
+
+    smartypants -s tag1,tag2,tag3
+
+``FILE``:
+  files to be processed.
+
+  If no ``FILE`` is specified, the input is taken from standard input.
+"""
+
+from __future__ import print_function
+
+import argparse
+import sys
+import warnings
+
+import smartypants
+
+
+def _str_attr_to_int(str_attr):
+    """
+    Convert str-type attr into int
+
+    >>> f = _str_attr_to_int
+    >>> f('q') == Attr.q
+    True
+    >>> f('1') == Attr.set1
+    True
+    >>> with warnings.catch_warnings(record=True) as w:
+    ...     f('bz')
+    ...     len(w)
+    ...     print(w[-1].message)
+    2
+    1
+    Unknown attribute: z
+    """
+    attr = 0
+    for c in str_attr:
+        if '0' <= c <= '3':
+            c = 'set' + c
+        if not hasattr(smartypants.Attr, c):
+            warnings.warn('Unknown attribute: %s' % c, Warning)
+            continue
+        attr |= getattr(smartypants.Attr, c)
+
+    return attr
+
+
+def main():
+
+    parser = argparse.ArgumentParser(description=smartypants.__description__)
+    parser.add_argument('-v', '--version', action='version',
+                        version=smartypants.__version__)
+    parser.add_argument('-a', '--attr', default='1',
+                        help='processing attributes (Default: %(default)s)')
+    parser.add_argument('-s', '--skip',
+                        default=','.join(smartypants.tags_to_skip),
+                        help='skip HTML elements (Default: %(default)s)')
+    parser.add_argument('files', metavar='FILE', type=argparse.FileType('r'),
+                        nargs='*', help='files to be processed ')
+    args = parser.parse_args()
+
+    with warnings.catch_warnings(record=True) as w:
+        attr = _str_attr_to_int(args.attr)
+        if len(w):
+            print(w[-1].message)
+            sys.exit(1)
+
+    smartypants.tags_to_skip = args.skip.split(',')
+
+    if args.files:
+        for f in args.files:
+            print(smartypants.smartypants(f.read(), attr), end='')
+    else:
+        print(smartypants.smartypants(sys.stdin.read(), attr), end='')
+
+
+if __name__ == '__main__':
+    main()
