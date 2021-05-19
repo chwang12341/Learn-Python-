@@ -182,15 +182,28 @@ input()會將使用者輸入的語句轉換成字符串，而此時如果又用e
 
 輸入:
 
-1. import('os').system('dir') 獲取資料夾目錄
+1. `__import__('os').system('dir')` 獲取資料夾目錄
 
-2. import('os').system('id') 獲取電腦使用者的ID與群組ID
+2. `__import__('os').system('id')` 獲取電腦使用者的ID與群組ID
 
 ```Python
-t = input('输入格:")
+t = input('输入格:')
 eval(t)
 ```
 
+
+
+**執行例子**
+
+```
+输入格:__import__('os').system('dir') 
+```
+
+Out[12]:
+
+```
+0
+```
 
 只要使用os這個模組就能輕鬆獲取電腦的一些資訊，所以使用上要特別注意這個問題
 
