@@ -81,13 +81,13 @@
 
 ex. 
 
-![Untitled](images/Untitled%201.png)
+![Untitled](images/Untitled1.png)
 
 過去我們學的數學可能會讓大家以為是x等於2，但在程式中我們應該解釋為我們把2這個數值指派給了x這個我們命名的變數
 
 當然我們也可以給變數一段話，一個字，一個字母，一個數值或一個浮點數等
 
-![Untitled](Python%E5%9F%BA%E7%A4%8E%E5%AD%B8%E8%B5%B7%E4%BE%86%20-%20%E7%AC%AC%E4%BA%8C%E9%9B%86%20-%20%E8%AE%8A%E6%95%B8%E7%9A%84%E8%A7%80%E5%BF%B5%E8%88%87%E8%B3%87%E6%96%99%E5%9E%8B%E6%85%8B%20e245a1d2e9e04fdab3a841cf146970a0/Untitled%202.png)
+![Untitled](images/Untitled2.png)
 
 ### 記憶體的觀念
 
@@ -102,7 +102,7 @@ ex.
 
 以前面我們設定好的變數來看的話，會像如圖這樣
 
-![變數配置記憶體圖.png](images/%25E8%25AE%258A%25E6%2595%25B8%25E9%2585%258D%25E7%25BD%25AE%25E8%25A8%2598%25E6%2586%25B6%25E9%25AB%2594%25E5%259C%2596.png)
+![變數配置記憶體圖.png](images/Untitled3.png)
 
 ## 四. 資料型態
 
